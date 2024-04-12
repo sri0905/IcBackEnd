@@ -8,8 +8,9 @@ const dressSchema = new Schema({
         type:String,
         required: true
     },
-    color:{
-        type:String
+    colorName:{
+        type:String,
+        required: true
     },
     brand:{
         type:String
@@ -18,6 +19,14 @@ const dressSchema = new Schema({
         type:Number
     },
     dressType:{
+        type:String,
+        required:true
+    },
+    date:{
+        type : Date,
+        default: Date.now
+    },
+    colorHex:{
         type:String,
         required:true
     }
