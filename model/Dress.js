@@ -1,34 +1,34 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
-const {Schema} = mongoose
-
+const { Schema } = mongoose;
 
 const dressSchema = new Schema({
-    image:{
-        type:String,
+    image: {
+        type: String,
         required: true
     },
-    colorName:{
-        type:String,
+    brand: {
+        type: String
+    },
+    size: {
+        type: Number
+    },
+    dressType: {
+        type: String,
         required: true
     },
-    brand:{
-        type:String
+    color: {
+        name: {
+            type: String
+        },
+        hex: {
+            type: String
+        }
     },
-    size:{
-        type:Number
-    },
-    dressType:{
-        type:String,
-        required:true
-    },
-    date:{
-        type : Date,
+    date: {
+        type: Date,
         default: Date.now
-    },
-    colorHex:{
-        type:String,
-        required:true
     }
-})
-module.exports = mongoose.model('dress', dressSchema)
+});
+
+module.exports = mongoose.model('dress', dressSchema);
