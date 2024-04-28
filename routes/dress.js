@@ -57,7 +57,7 @@ router.post('/upload', upload.single('image'), [
 router.post('/getAllUploads', async (req, res) => {
   
   const dresses = await Dresses.find();
-  if (dresses.length === 0) { return res.status(404).send("No dressess in your collection, Please add a dress") }
+  if (dresses.length === 0) { return res.status(200).json([]); }
   res.json(dresses)
 })
 
